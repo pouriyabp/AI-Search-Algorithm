@@ -5,7 +5,9 @@ down
 down
 down
 up
-right, use money
-right
+right, use food
 up
+up, use food
+down
+right
 right
