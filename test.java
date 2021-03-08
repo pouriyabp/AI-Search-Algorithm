@@ -63,8 +63,18 @@ public class test {
         BFS bfs = new BFS();
         bfs.search(node);
 System.out.println("------------------------------------------------------");
-System.out.println("DFS method!");
+System.out.println("DFS Search!");
         DFS dfs =new DFS();
         dfs.search(node);
+
+        System.out.println("------------------------------------------------------");
+        System.out.println("DLS Search!");
+        IDS ids=new IDS();
+        ids.dlsSearch(node,map.rows*map.cols);
+        System.out.println("------------------------------------------------------");
+        System.out.println("IDS Search!");
+        ids.search(node);
+
+
     }
 }
