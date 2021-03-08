@@ -62,5 +62,9 @@ public class test {
         Node node = new Node(player,map,null,null);
         BFS bfs = new BFS();
         bfs.search(node);
+System.out.println("------------------------------------------------------");
+System.out.println("DFS method!");
+        DFS dfs =new DFS();
+        dfs.search(node);
     }
 }
