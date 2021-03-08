@@ -70,7 +70,7 @@ System.out.println("DFS Search!");
         System.out.println("------------------------------------------------------");
         System.out.println("DLS Search!");
         IDS ids=new IDS();
-        ids.dlsSearch(node,map.rows*map.cols);
+        ids.dlsSearch(node, map.rows* map.cols);
         System.out.println("------------------------------------------------------");
         System.out.println("IDS Search!");
         ids.search(node);
