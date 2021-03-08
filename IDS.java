@@ -380,9 +380,11 @@ public class IDS {
 
 
     public static void main(String[] args) {
-        DFS dfs=new DFS();
-        dfs.buildMap();
-        Node node = new Node(dfs.player, dfs.map, null,null);
+        IDS ids=new IDS();
+        ids.buildMap();
+        Node node = new Node(ids.player, ids.map, null,null);
+        ids.search(node);
+
 
     }
 
