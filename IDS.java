@@ -349,6 +349,19 @@ public class IDS {
                 ArrayList<Node> children = temp.successor();
 
                 if (depthWeAre<depth) {
+                    boolean chek=false;
+                    for (int i = 0; i < children.size(); i++) {
+                        if (!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
+                         chek=true;
+                         break;
+                        }
+                    }
+                    if (chek==true){
+                        depthWeAre+=1;
+                    }
+
+
+
 
                     for (int i = 0; i < children.size(); i++) {
                         if (!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
@@ -366,7 +379,7 @@ public class IDS {
                 }else {
                     return 0;
                     }
-            depthWeAre+=1;
+
 
 
         }
