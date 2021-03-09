@@ -320,7 +320,7 @@ public class DFS{
    public static void main(String[] args) {
        DFS dfs=new DFS();
        dfs.buildMap();
-       Node node = new Node(dfs.player, dfs.map, null,null);
+       Node node = new Node(dfs.player, dfs.map, null,null,0);
        dfs.search(node);
     }
 
