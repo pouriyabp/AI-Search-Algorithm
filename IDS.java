@@ -321,6 +321,7 @@ public class IDS {
         while (i<Integer.MAX_VALUE){
 
             if (dlsSearch(intialNode,i)==1) {
+                System.out.println("found result in depth: "+i);
                 break;
             }
             i++;
@@ -329,7 +330,7 @@ public class IDS {
     }
 
     public int dlsSearch(Node intialNode,int depth){
-        int depthWeAre=0;
+
         Stack <Node> frontier= new Stack<Node>();
         Hashtable<String, Boolean> inFrontier = new Hashtable<>();
         Hashtable<String, Boolean> explored = new Hashtable<>();
