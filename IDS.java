@@ -333,11 +333,12 @@ public class IDS {
         Stack <Node> frontier= new Stack<Node>();
         Hashtable<String, Boolean> inFrontier = new Hashtable<>();
         Hashtable<String, Boolean> explored = new Hashtable<>();
-
-        if(isGoal(intialNode)){
+    if (intialNode.depth<=depth) {
+        if (isGoal(intialNode)) {
             result(intialNode);
             return 1;
         }
+    }
         frontier.add(intialNode);
         inFrontier.put(intialNode.hash(),true);
 
@@ -348,42 +349,25 @@ public class IDS {
                 explored.put(temp.hash(),true);
                 ArrayList<Node> children = temp.successor();
 
-                if (depthWeAre<depth) {
-                    boolean chek=false;
-                    for (int i = 0; i < children.size(); i++) {
-                        if (!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
-                         chek=true;
-                         break;
-                        }
-                    }
-                    if (chek==true){
-                        depthWeAre+=1;
-                    }
-
-
-
 
                     for (int i = 0; i < children.size(); i++) {
                         if (!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
-                            if (isGoal(children.get(i))) {
-                                result(children.get(i));
-                                return 1;
+                            if(children.get(i).depth<=depth) {
+                                if (isGoal(children.get(i))) {
+                                    result(children.get(i));
+                                    return 1;
+                                }
+
+                                frontier.push(children.get(i));
+                                inFrontier.put(children.get(i).hash(), true);
                             }
-
-                            frontier.push(children.get(i));
-                            inFrontier.put(children.get(i).hash(), true);
-
                         }
 
                     }
-                }else {
-                    return 0;
-                    }
+                }
 
+            return 0;
 
-
-        }
-        return 0;
 
 
     }
@@ -395,8 +379,8 @@ public class IDS {
     public static void main(String[] args) {
         IDS ids=new IDS();
         ids.buildMap();
-        Node node = new Node(ids.player, ids.map, null,null);
-        ids.search(node);
+        Node node = new Node(ids.player, ids.map, null,null,0);
+      ids.search(node);
 
 
     }
