@@ -59,7 +59,7 @@ public class test {
         //print method prints the map
         map.print();
         visualizer.printMap(map, player);
-        Node node = new Node(player,map,null,null);
+        Node node = new Node(player,map,null,null,0);
         BFS bfs = new BFS();
         bfs.search(node);
 System.out.println("------------------------------------------------------");
@@ -70,7 +70,7 @@ System.out.println("DFS Search!");
         System.out.println("------------------------------------------------------");
         System.out.println("DLS Search!");
         IDS ids=new IDS();
-        ids.dlsSearch(node, map.rows* map.cols);
+        ids.dlsSearch(node, 11);
         System.out.println("------------------------------------------------------");
         System.out.println("IDS Search!");
         ids.search(node);
