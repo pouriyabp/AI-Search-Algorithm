@@ -74,7 +74,10 @@ System.out.println("DFS Search!");
         System.out.println("------------------------------------------------------");
         System.out.println("IDS Search!");
         ids.search(node);
-
+        System.out.println("------------------------------------------------------");
+        System.out.println("BDS Search!");
+        BDS bds = new BDS();
+        bds.search(node,player);
 
     }
 }
