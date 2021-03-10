@@ -26,4 +26,8 @@ public class Player {
     public void changeFood(int amount){
         food += amount;
     }
+    public void changePlayerLocation(int i,int j){
+        this.i=i;
+        this.j=j;
+    }
 }
