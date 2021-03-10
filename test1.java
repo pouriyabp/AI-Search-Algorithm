@@ -73,6 +73,11 @@ public class test1 {
         System.out.println("------------------------------------------------------");
         System.out.println("IDS Search!");
         ids.search(node);
+        System.out.println("------------------------------------------------------");
+        System.out.println("BDS Search!");
+        BDS bds = new BDS();
+        bds.search(node,player);
+
 
 
     }
