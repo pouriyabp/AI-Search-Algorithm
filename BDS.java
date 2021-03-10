@@ -314,7 +314,55 @@ public class BDS
     }
 
 
+    public  int[] findCastel(Node node){
+        int[] location=new int[2];
+        for (int i = 0; i < node.map.rows; i++) {
+            for (int j = 0; j < node.map.cols; j++) {
+                if (node.map.at(i,j).name=='C'){
+                    location[0]=i;
+                    location[1]=j;
+                    return location;
+                }
 
+            }
+
+        }
+        return null;
+    }
+
+
+
+
+
+    public void search(Node initialNode,Player player){
+
+        int [] castel_location = findCastel(initialNode);
+        int [] player_location = new int[2];
+        player_location[0]=player.i;
+        player_location[1]=player.j;
+        Player upsidePlayer=new Player(player.i,player.j,player.money,player.food,player.haskey);
+        Map upsideMap =new Map(initialNode.map.rows,initialNode.map.cols);
+        for (int i = 0; i < initialNode.map.rows; i++) {
+            for (int j = 0; j < initialNode.map.cols; j++) {
+                upsideMap.addEntity(i,j,initialNode.map.at(i,j));
+            }
+        }
+
+
+    upsideMap.removeEntity(castel_location[0], castel_location[1]);
+    upsideMap.removeEntity(player_location[0], player_location[1]);
+    upsideMap.addEntity(player_location[0], player_location[1], new BaseEntity('C'));
+    upsideMap.addEntity(castel_location[0], castel_location[1], new BaseEntity('G'));
+    upsidePlayer.changePlayerLocation(castel_location[0], castel_location[1]);
+
+
+    Node upsideNode= new Node(upsidePlayer,upsideMap,null,null,0);
+
+
+
+
+
+    }
 
 
 
