@@ -36,4 +36,8 @@ public class Map {
             System.out.println();
         }
     }
+    public void removeEntity(int i, int j)
+    {
+        game . remove((i*cols)+j);
+    }
 }
