@@ -400,7 +400,7 @@ public class BDS
                 if(!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
                     if (isGoal(children.get(i))) {
                        // result(children.get(i));
-                        System.out.println("Goal");
+                        System.out.println("reach Goal side");
                         return;
                     }
                     frontier.add(children.get(i));
@@ -412,7 +412,7 @@ public class BDS
                 if(!(upsideInFrontier.containsKey(upsideChildren.get(i).hash())) && !(upsideExplored.containsKey(upsideChildren.get(i).hash()))) {
                     if (isGoal(upsideChildren.get(i))) {
                        // result(upsideChildren.get(i));
-                        System.out.println("Goal");
+                        System.out.println("reach Goal upside");
                         return;
                     }
                     upsideFrontier.add(upsideChildren.get(i));
