@@ -359,7 +359,7 @@ public class Node {
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"right",this.depth+1);
                     temp.player.j ++;
-                    temp.player.haskey = true;
+                    temp.player.haskey = false;
                     result.add(temp);
                 }
                 else if(entity.name == 'B'){
@@ -426,7 +426,7 @@ public class Node {
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"left",this.depth+1);
                     temp.player.j --;
-                    temp.player.haskey = true;
+                    temp.player.haskey = false;
                     result.add(temp);
                 }
                 else if(entity.name == 'B'){
@@ -493,7 +493,7 @@ public class Node {
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"up",this.depth+1);
                     temp.player.i --;
-                    temp.player.haskey = true;
+                    temp.player.haskey = false;
                     result.add(temp);
                 }
                 else if(entity.name == 'B'){
@@ -560,7 +560,7 @@ public class Node {
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"down",this.depth+1);
                     temp.player.i ++;
-                    temp.player.haskey = true;
+                    temp.player.haskey = false;
                     result.add(temp);
                 }
                 else if(entity.name == 'B'){
