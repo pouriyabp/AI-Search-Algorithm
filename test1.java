@@ -78,6 +78,10 @@ public class test1 {
         BDS bds = new BDS();
         bds.search(node,player);
 
+        System.out.println("------------------------------------------------------");
+        System.out.println("BDS Search2!");
+        bds.search2(node,player);
+
 
 
     }
