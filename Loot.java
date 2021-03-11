@@ -16,6 +16,18 @@ public class Loot extends BaseEntity{
         player.changeFood(this.food);
         this.used = true;
     }
+
+    public void backMoney(Player player){
+        player.changeMoney(-this.money);
+        this.used = false;
+    }
+    public void backFood(Player player){
+        player.changeFood(-this.food);
+        this.used = false;
+    }
+
+    
+
     @Override
     public Loot copy(){
         Loot loot = new Loot(this.money,this.food);
