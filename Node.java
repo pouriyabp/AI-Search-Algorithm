@@ -383,9 +383,7 @@ public class Node {
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
                     if(!loot.used){
-                        Node temp = new Node(this.player,this.map,this,"right",this.depth-1);
-                        temp.player.j ++;
-                        result.add(temp);
+
                     }
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"right, use money",this.depth-1);
@@ -450,9 +448,7 @@ public class Node {
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
                     if(!loot.used){
-                        Node temp = new Node(this.player,this.map,this,"left",this.depth-1);
-                        temp.player.j --;
-                        result.add(temp);
+
                     }
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"left, use money",this.depth-1);
@@ -517,9 +513,7 @@ public class Node {
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
                     if(!loot.used){
-                        Node temp = new Node(this.player,this.map,this,"up",this.depth-1);
-                        temp.player.i --;
-                        result.add(temp);
+
                     }
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"up, use money",this.depth-1);
@@ -584,9 +578,7 @@ public class Node {
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
                     if(!loot.used){
-                        Node temp = new Node(this.player,this.map,this,"down",this.depth-1);
-                        temp.player.i ++;
-                        result.add(temp);
+
                     }
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"down, use money",this.depth-1);
