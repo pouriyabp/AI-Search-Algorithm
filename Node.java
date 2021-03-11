@@ -349,13 +349,13 @@ public class Node {
                         result.add(temp);
                     }
                 }
-                else if(entity.name == 'C'){
-                    if(!player.haskey){
-                        Node temp = new Node(this.player,this.map,this,"right",this.depth-1);
-                        temp.player.j ++;
-                        result.add(temp);
-                    }
-                }
+//                else if(entity.name == 'C'){
+//                    if(!player.haskey){
+//                        Node temp = new Node(this.player,this.map,this,"right",this.depth-1);
+//                        temp.player.j ++;
+//                        result.add(temp);
+//                    }
+//                }
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"right",this.depth-1);
                     temp.player.j ++;
@@ -416,13 +416,13 @@ public class Node {
                         result.add(temp);
                     }
                 }
-                else if(entity.name == 'C'){
-                    if(!player.haskey){
-                        Node temp = new Node(this.player,this.map,this,"left",this.depth-1);
-                        temp.player.j --;
-                        result.add(temp);
-                    }
-                }
+//                else if(entity.name == 'C'){
+//                    if(!player.haskey){
+//                        Node temp = new Node(this.player,this.map,this,"left",this.depth-1);
+//                        temp.player.j --;
+//                        result.add(temp);
+//                    }
+//                }
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"left",this.depth-1);
                     temp.player.j --;
@@ -483,13 +483,13 @@ public class Node {
                         result.add(temp);
                     }
                 }
-                else if(entity.name == 'C'){
-                    if(!player.haskey){
-                        Node temp = new Node(this.player,this.map,this,"up",this.depth-1);
-                        temp.player.i --;
-                        result.add(temp);
-                    }
-                }
+//                else if(entity.name == 'C'){
+//                    if(!player.haskey){
+//                        Node temp = new Node(this.player,this.map,this,"up",this.depth-1);
+//                        temp.player.i --;
+//                        result.add(temp);
+//                    }
+//                }
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"up",this.depth-1);
                     temp.player.i --;
@@ -550,13 +550,13 @@ public class Node {
                         result.add(temp);
                     }
                 }
-                else if(entity.name == 'C'){
-                    if(!player.haskey){
-                        Node temp = new Node(this.player,this.map,this,"down",this.depth-1);
-                        temp.player.i ++;
-                        result.add(temp);
-                    }
-                }
+//                else if(entity.name == 'C'){
+//                    if(!player.haskey){
+//                        Node temp = new Node(this.player,this.map,this,"down",this.depth-1);
+//                        temp.player.i ++;
+//                        result.add(temp);
+//                    }
+//                }
                 else if(entity.name == 'K'){
                     Node temp = new Node(this.player,this.map,this,"down",this.depth-1);
                     temp.player.i ++;
