@@ -527,11 +527,7 @@ public class BDS
 
             for(int i = 0;i<children.size();i++){
                 if(!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
-                    if (isGoal(children.get(i))) {
-                        // result(children.get(i));
-                        System.out.println("reach Goal side");
-                        return;
-                    }
+
                     frontier.add(children.get(i));
                     inFrontier.put(children.get(i).hash(), true);
                 }
@@ -579,12 +575,13 @@ public class BDS
                 Node uN = (Node) upsidelist.get(j);
                 String unHash= uN.hash();
                 if (nHash.equals(unHash)){
+
+                    bds.result(n);
                     System.out.println("found from both dirction");
                     System.out.println("n hash is "+n.hash());
                     System.out.println("un hash is "+uN.hash());
                     System.out.println("side depth "+n.depth);
                     System.out.println("upside depth "+uN.depth);
-                    bds.result(n);
                     System.out.println("************   ************");
                     //bds.result(uN);
                     return 1;
