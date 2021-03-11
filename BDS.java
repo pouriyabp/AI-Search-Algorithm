@@ -537,15 +537,6 @@ public class BDS
                 }
             }
 
-            for(int i = 0;i<upsideChildren.size();i++){
-                if(!(upsideInFrontier.containsKey(upsideChildren.get(i).hash())) && !(upsideExplored.containsKey(upsideChildren.get(i).hash()))) {
-
-                    upsideFrontier.add(upsideChildren.get(i));
-                    upsideInFrontier.put(upsideChildren.get(i).hash(), true);
-                }
-            }
-
-
             ArrayList list = new ArrayList(frontier);
             ArrayList upsidelist = new ArrayList(upsideFrontier);
 
@@ -558,6 +549,51 @@ public class BDS
                 String nHash=n.hash();
                 for (int j = 0; j < upsidelist.size(); j++) {
                     Node uN = (Node) upsidelist.get(j);
+                    String unHash= uN.hash();
+                    if (nHash.equals(unHash)){
+                        System.out.println("found from both dirction");
+                        System.out.println("n hash is "+n.hash());
+                        System.out.println("un hash is "+uN.hash());
+                        System.out.println("side depth "+n.depth);
+                        System.out.println("upside depth "+uN.depth);
+                        result(n);
+                        System.out.println("************   ************");
+
+                        return;
+                    }
+                    //upsideFrontier.add(uN);
+
+                }
+                //frontier.add(n);
+
+            }
+
+
+
+
+
+
+        for(int i = 0;i<upsideChildren.size();i++){
+                if(!(upsideInFrontier.containsKey(upsideChildren.get(i).hash())) && !(upsideExplored.containsKey(upsideChildren.get(i).hash()))) {
+
+                    upsideFrontier.add(upsideChildren.get(i));
+                    upsideInFrontier.put(upsideChildren.get(i).hash(), true);
+                }
+            }
+
+
+            ArrayList list2 = new ArrayList(frontier);
+            ArrayList upsidelist2 = new ArrayList(upsideFrontier);
+
+
+
+            for (int i = 0; i < list2.size(); i++) {
+
+                Node n=(Node) list2.get(i);
+
+                String nHash=n.hash();
+                for (int j = 0; j < upsidelist2.size(); j++) {
+                    Node uN = (Node) upsidelist2.get(j);
                     String unHash= uN.hash();
                     if (nHash.equals(unHash)){
                         System.out.println("found from both dirction");
