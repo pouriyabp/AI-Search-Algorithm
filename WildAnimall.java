@@ -7,6 +7,9 @@ public class WildAnimall extends BaseEntity {
     public void takeFood(Player player){
         player.changeFood(-power);
     }
+    public void giveFood(Player player){
+        player.changeFood(+power);
+    }
     @Override
     public WildAnimall copy(){
         return new WildAnimall(this.power);

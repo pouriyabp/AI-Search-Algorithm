@@ -7,6 +7,9 @@ public class Bandit extends BaseEntity {
     public void takeMoney(Player player){
         player.changeMoney(-power);
     }
+    public void giveMoney(Player player){
+        player.changeMoney(+power);
+    }
     @Override
     public Bandit copy(){
         return new Bandit(this.power);
