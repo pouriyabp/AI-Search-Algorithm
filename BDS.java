@@ -537,37 +537,9 @@ public class BDS
                 }
             }
 
-            ArrayList list = new ArrayList(frontier);
-            ArrayList upsidelist = new ArrayList(upsideFrontier);
-
-
-
-            for (int i = 0; i < list.size(); i++) {
-
-                Node n=(Node) list.get(i);
-
-                String nHash=n.hash();
-                for (int j = 0; j < upsidelist.size(); j++) {
-                    Node uN = (Node) upsidelist.get(j);
-                    String unHash= uN.hash();
-                    if (nHash.equals(unHash)){
-                        System.out.println("found from both dirction");
-                        System.out.println("n hash is "+n.hash());
-                        System.out.println("un hash is "+uN.hash());
-                        System.out.println("side depth "+n.depth);
-                        System.out.println("upside depth "+uN.depth);
-                        result(n);
-                        System.out.println("************   ************");
-
-                        return;
-                    }
-                    //upsideFrontier.add(uN);
-
-                }
-                //frontier.add(n);
-
+            if( BDS.searchInQueue(frontier,upsideFrontier)==1){
+                return;
             }
-
 
 
 
@@ -581,37 +553,9 @@ public class BDS
                 }
             }
 
-
-            ArrayList list2 = new ArrayList(frontier);
-            ArrayList upsidelist2 = new ArrayList(upsideFrontier);
-
-
-
-            for (int i = 0; i < list2.size(); i++) {
-
-                Node n=(Node) list2.get(i);
-
-                String nHash=n.hash();
-                for (int j = 0; j < upsidelist2.size(); j++) {
-                    Node uN = (Node) upsidelist2.get(j);
-                    String unHash= uN.hash();
-                    if (nHash.equals(unHash)){
-                        System.out.println("found from both dirction");
-                        System.out.println("n hash is "+n.hash());
-                        System.out.println("un hash is "+uN.hash());
-                        System.out.println("side depth "+n.depth);
-                        System.out.println("upside depth "+uN.depth);
-                        result(n);
-                        System.out.println("************   ************");
-
-                        return;
-                    }
-                    //upsideFrontier.add(uN);
-
-                }
-                //frontier.add(n);
-
-            }
+           if( BDS.searchInQueue(frontier,upsideFrontier)==1){
+               return;
+           }
 
 
 
@@ -620,7 +564,39 @@ public class BDS
 
     }
 
+    public static int searchInQueue(Queue queue,Queue upsdieQueue){
+        ArrayList list = new ArrayList(queue);
+        ArrayList upsidelist= new ArrayList(upsdieQueue);
+        BDS bds=new BDS();
 
+
+        for (int i = 0; i < list.size(); i++) {
+
+            Node n=(Node) list.get(i);
+
+            String nHash=n.hash();
+            for (int j = 0; j < upsidelist.size(); j++) {
+                Node uN = (Node) upsidelist.get(j);
+                String unHash= uN.hash();
+                if (nHash.equals(unHash)){
+                    System.out.println("found from both dirction");
+                    System.out.println("n hash is "+n.hash());
+                    System.out.println("un hash is "+uN.hash());
+                    System.out.println("side depth "+n.depth);
+                    System.out.println("upside depth "+uN.depth);
+                    bds.result(n);
+                    System.out.println("************   ************");
+                    //bds.result(uN);
+                    return 1;
+                }
+                //upsideFrontier.add(uN);
+
+            }
+            //frontier.add(n);
+
+        }
+        return 0;
+    }
 
 
 }
