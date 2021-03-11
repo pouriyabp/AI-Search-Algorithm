@@ -598,6 +598,7 @@ public class Node {
                         ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
                     }
+                    
                 }
             }
         }
