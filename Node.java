@@ -335,7 +335,7 @@ public class Node {
         ArrayList<Node> result = new ArrayList<Node>();
         if(this.player.j<this.map.cols-1) {//player can move right
             BaseEntity entity = this.map.at(this.player.i,this.player.j+1);
-            if(entity.name != 'S'){
+            if(entity.name != 'S' && entity.name != 'C'){
                 if(entity.name == 'G'){
                     Node temp = new Node(this.player,this.map,this,"right",this.depth-1);
                     temp.player.j ++;
@@ -364,7 +364,7 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money<bandit.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"right",this.depth-1);
                         temp.player.j++;
                         bandit.giveMoney(temp.player);
@@ -373,7 +373,7 @@ public class Node {
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food<wildAnimall.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"right",this.depth-1);
                         temp.player.j ++;
                         wildAnimall.giveFood(temp.player);
@@ -431,7 +431,7 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money<bandit.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"left",this.depth-1);
                         temp.player.j--;
                         bandit.giveMoney(temp.player);
@@ -440,7 +440,7 @@ public class Node {
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food<wildAnimall.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"left",this.depth-1);
                         temp.player.j --;
                         wildAnimall.giveFood(temp.player);
@@ -498,7 +498,7 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money<bandit.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"up",this.depth-1);
                         temp.player.i--;
                         bandit.giveMoney(temp.player);
@@ -507,7 +507,7 @@ public class Node {
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food<wildAnimall.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"up",this.depth-1);
                         temp.player.i --;
                         wildAnimall.giveFood(temp.player);
@@ -565,7 +565,7 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money<bandit.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"down",this.depth-1);
                         temp.player.i++;
                         bandit.giveMoney(temp.player);
@@ -574,7 +574,7 @@ public class Node {
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food<wildAnimall.power){
+                    if(true){
                         Node temp = new Node(this.player,this.map,this,"down",this.depth-1);
                         temp.player.i ++;
                         wildAnimall.giveFood(temp.player);
