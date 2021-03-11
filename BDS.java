@@ -458,7 +458,131 @@ public class BDS
 
 
     }
+    public Node bfsSearch(Node intialNode){
+        Queue<Node> frontier = new LinkedList<Node>();
+        Hashtable<String, Boolean> inFrontier = new Hashtable<>();
+        Hashtable<String, Boolean> explored = new Hashtable<>();
+        if(isGoal(intialNode)){
+            return intialNode;
+        }
+        frontier.add(intialNode);
+        inFrontier.put(intialNode.hash(),true);
+        while (!frontier.isEmpty()){
+            Node temp = frontier.poll();
+            inFrontier.remove(temp.hash());
+            explored.put(temp.hash(),true);
+            ArrayList<Node> children = temp.successor();
+            for(int i = 0;i<children.size();i++){
+                if(!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
+                    if (isGoal(children.get(i))) {
+                        return children.get(i);
+                    }
+                    frontier.add(children.get(i));
+                    inFrontier.put(children.get(i).hash(), true);
+                }
+            }
+        }
+        return null;
+    }
 
+    public void search2(Node initialNode,Player player){
+
+        BDS bds=new BDS();
+        Node upsideNode =bds.bfsSearch(initialNode) ;
+
+
+        //bds search
+        //use to bfs for search
+        Queue<Node> frontier = new LinkedList<Node>();
+
+        Queue<Node> upsideFrontier = new LinkedList<Node>();
+
+        Hashtable<String, Boolean> inFrontier = new Hashtable<>();
+        Hashtable<String, Boolean> explored = new Hashtable<>();
+
+        Hashtable<String, Boolean> upsideInFrontier = new Hashtable<>();
+        Hashtable<String, Boolean> upsideExplored = new Hashtable<>();
+        if(isGoal(initialNode)){
+            result(initialNode);
+            return;
+        }
+
+
+        frontier.add(initialNode);
+        inFrontier.put(initialNode.hash(),true);
+
+        upsideFrontier.add(upsideNode);
+        upsideInFrontier.put(upsideNode.hash(),true);
+
+        while (!frontier.isEmpty()|!upsideFrontier.isEmpty()) {
+            Node temp = frontier.poll();
+            inFrontier.remove(temp.hash());
+            explored.put(temp.hash(),true);
+            ArrayList<Node> children = temp.successor();
+
+            Node upsideTemp = upsideFrontier.poll();
+            upsideInFrontier.remove(upsideTemp.hash());
+            upsideExplored.put(upsideTemp.hash(),true);
+            ArrayList<Node> upsideChildren = upsideTemp.upsideSuccessor();
+
+            for(int i = 0;i<children.size();i++){
+                if(!(inFrontier.containsKey(children.get(i).hash())) && !(explored.containsKey(children.get(i).hash()))) {
+                    if (isGoal(children.get(i))) {
+                        // result(children.get(i));
+                        System.out.println("reach Goal side");
+                        return;
+                    }
+                    frontier.add(children.get(i));
+                    inFrontier.put(children.get(i).hash(), true);
+                }
+            }
+
+            for(int i = 0;i<upsideChildren.size();i++){
+                if(!(upsideInFrontier.containsKey(upsideChildren.get(i).hash())) && !(upsideExplored.containsKey(upsideChildren.get(i).hash()))) {
+
+                    upsideFrontier.add(upsideChildren.get(i));
+                    upsideInFrontier.put(upsideChildren.get(i).hash(), true);
+                }
+            }
+
+
+            ArrayList list = new ArrayList(frontier);
+            ArrayList upsidelist = new ArrayList(upsideFrontier);
+
+
+
+            for (int i = 0; i < list.size(); i++) {
+
+                Node n=(Node) list.get(i);
+
+                String nHash=n.hash();
+                for (int j = 0; j < upsidelist.size(); j++) {
+                    Node uN = (Node) upsidelist.get(j);
+                    String unHash= uN.hash();
+                    if (nHash.equals(unHash)){
+                        System.out.println("found from both dirction");
+                        System.out.println("n hash is "+n.hash());
+                        System.out.println("un hash is "+uN.hash());
+                        System.out.println("side depth "+n.depth);
+                        System.out.println("upside depth "+uN.depth);
+                        result(n);
+                        System.out.println("************");
+
+                        return;
+                    }
+                    //upsideFrontier.add(uN);
+
+                }
+                //frontier.add(n);
+
+            }
+
+
+
+        }
+
+
+    }
 
 
 
