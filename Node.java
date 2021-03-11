@@ -382,7 +382,7 @@ public class Node {
                 }
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
-                    if(loot.used){
+                    if(!loot.used){
                         Node temp = new Node(this.player,this.map,this,"right",this.depth+1);
                         temp.player.j ++;
                         result.add(temp);
@@ -390,11 +390,11 @@ public class Node {
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"right, use money",this.depth+1);
                         temp1.player.j ++;
-                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).useMoney(temp1.player);
+                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).backMoney(temp1.player);
                         result.add(temp1);
                         Node temp2 = new Node(this.player,this.map,this,"right, use food",this.depth+1);
                         temp2.player.j ++;
-                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).useFood(temp2.player);
+                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
                     }
                 }
@@ -449,7 +449,7 @@ public class Node {
                 }
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
-                    if(loot.used){
+                    if(!loot.used){
                         Node temp = new Node(this.player,this.map,this,"left",this.depth+1);
                         temp.player.j --;
                         result.add(temp);
@@ -457,11 +457,11 @@ public class Node {
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"left, use money",this.depth+1);
                         temp1.player.j --;
-                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).useMoney(temp1.player);
+                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).backMoney(temp1.player);
                         result.add(temp1);
                         Node temp2 = new Node(this.player,this.map,this,"left, use food",this.depth+1);
                         temp2.player.j --;
-                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).useFood(temp2.player);
+                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
                     }
                 }
@@ -516,7 +516,7 @@ public class Node {
                 }
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
-                    if(loot.used){
+                    if(!loot.used){
                         Node temp = new Node(this.player,this.map,this,"up",this.depth+1);
                         temp.player.i --;
                         result.add(temp);
@@ -524,11 +524,11 @@ public class Node {
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"up, use money",this.depth+1);
                         temp1.player.i --;
-                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).useMoney(temp1.player);
+                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).backMoney(temp1.player);
                         result.add(temp1);
                         Node temp2 = new Node(this.player,this.map,this,"up, use food",this.depth+1);
                         temp2.player.i --;
-                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).useFood(temp2.player);
+                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
                     }
                 }
@@ -583,7 +583,7 @@ public class Node {
                 }
                 else if(entity.name == 'L'){
                     Loot loot = (Loot)entity;
-                    if(loot.used){
+                    if(!loot.used){
                         Node temp = new Node(this.player,this.map,this,"down",this.depth+1);
                         temp.player.i ++;
                         result.add(temp);
@@ -591,11 +591,11 @@ public class Node {
                     else{
                         Node temp1 = new Node(this.player,this.map,this,"down, use money",this.depth+1);
                         temp1.player.i ++;
-                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).useMoney(temp1.player);
+                        ((Loot)temp1.map.at(temp1.player.i,temp1.player.j)).backMoney(temp1.player);
                         result.add(temp1);
                         Node temp2 = new Node(this.player,this.map,this,"down, use food",this.depth+1);
                         temp2.player.i ++;
-                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).useFood(temp2.player);
+                        ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
                     }
                 }
