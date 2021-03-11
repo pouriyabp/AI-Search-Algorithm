@@ -345,7 +345,7 @@ public class Node {
                     if(((Bridge)entity).traveresd) {
                         Node temp = new Node(this.player, this.map, this, "right",this.depth+1);
                         temp.player.j++;
-                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = true;
+                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
                     }
                 }
@@ -412,7 +412,7 @@ public class Node {
                     if(((Bridge)entity).traveresd) {
                         Node temp = new Node(this.player, this.map, this, "left",this.depth+1);
                         temp.player.j--;
-                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = true;
+                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
                     }
                 }
@@ -479,7 +479,7 @@ public class Node {
                     if(((Bridge)entity).traveresd) {
                         Node temp = new Node(this.player, this.map, this, "up",this.depth+1);
                         temp.player.i--;
-                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = true;
+                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
                     }
                 }
@@ -546,7 +546,7 @@ public class Node {
                     if(((Bridge)entity).traveresd) {
                         Node temp = new Node(this.player, this.map, this, "down",this.depth+1);
                         temp.player.i++;
-                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = true;
+                        ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
                     }
                 }
