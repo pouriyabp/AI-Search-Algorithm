@@ -348,6 +348,9 @@ public class Node {
                         ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
                     }
+                    else{
+
+                    }
                 }
 //                else if(entity.name == 'C'){
 //                    if(!player.haskey){
@@ -412,6 +415,9 @@ public class Node {
                         temp.player.j--;
                         ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
+                    }
+                    else{
+
                     }
                 }
 //                else if(entity.name == 'C'){
@@ -478,6 +484,9 @@ public class Node {
                         ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
                     }
+                    else{
+
+                    }
                 }
 //                else if(entity.name == 'C'){
 //                    if(!player.haskey){
@@ -542,6 +551,9 @@ public class Node {
                         temp.player.i++;
                         ((Bridge) temp.map.at(temp.player.i, temp.player.j)).traveresd = false;
                         result.add(temp);
+                    }
+                    else{
+
                     }
                 }
 //                else if(entity.name == 'C'){
