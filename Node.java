@@ -364,19 +364,19 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money>bandit.power){
+                    if(this.player.money<bandit.power){
                         Node temp = new Node(this.player,this.map,this,"right",this.depth+1);
                         temp.player.j++;
-                        bandit.takeMoney(temp.player);
+                        bandit.giveMoney(temp.player);
                         result.add(temp);
                     }
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food>wildAnimall.power){
+                    if(this.player.food<wildAnimall.power){
                         Node temp = new Node(this.player,this.map,this,"right",this.depth+1);
                         temp.player.j ++;
-                        wildAnimall.takeFood(temp.player);
+                        wildAnimall.giveFood(temp.player);
                         result.add(temp);
                     }
                 }
@@ -431,19 +431,19 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money>bandit.power){
+                    if(this.player.money<bandit.power){
                         Node temp = new Node(this.player,this.map,this,"left",this.depth+1);
                         temp.player.j--;
-                        bandit.takeMoney(temp.player);
+                        bandit.giveMoney(temp.player);
                         result.add(temp);
                     }
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food>wildAnimall.power){
+                    if(this.player.food<wildAnimall.power){
                         Node temp = new Node(this.player,this.map,this,"left",this.depth+1);
                         temp.player.j --;
-                        wildAnimall.takeFood(temp.player);
+                        wildAnimall.giveFood(temp.player);
                         result.add(temp);
                     }
                 }
@@ -498,19 +498,19 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money>bandit.power){
+                    if(this.player.money<bandit.power){
                         Node temp = new Node(this.player,this.map,this,"up",this.depth+1);
                         temp.player.i--;
-                        bandit.takeMoney(temp.player);
+                        bandit.giveMoney(temp.player);
                         result.add(temp);
                     }
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food>wildAnimall.power){
+                    if(this.player.food<wildAnimall.power){
                         Node temp = new Node(this.player,this.map,this,"up",this.depth+1);
                         temp.player.i --;
-                        wildAnimall.takeFood(temp.player);
+                        wildAnimall.giveFood(temp.player);
                         result.add(temp);
                     }
                 }
@@ -565,19 +565,19 @@ public class Node {
                 }
                 else if(entity.name == 'B'){
                     Bandit bandit = (Bandit) entity;
-                    if(this.player.money>bandit.power){
+                    if(this.player.money<bandit.power){
                         Node temp = new Node(this.player,this.map,this,"down",this.depth+1);
                         temp.player.i++;
-                        bandit.takeMoney(temp.player);
+                        bandit.giveMoney(temp.player);
                         result.add(temp);
                     }
                 }
                 else if(entity.name == 'W'){
                     WildAnimall wildAnimall = (WildAnimall) entity;
-                    if(this.player.food>wildAnimall.power){
+                    if(this.player.food<wildAnimall.power){
                         Node temp = new Node(this.player,this.map,this,"down",this.depth+1);
                         temp.player.i ++;
-                        wildAnimall.takeFood(temp.player);
+                        wildAnimall.giveFood(temp.player);
                         result.add(temp);
                     }
                 }
