@@ -566,7 +566,7 @@ public class BDS
                         System.out.println("side depth "+n.depth);
                         System.out.println("upside depth "+uN.depth);
                         result(n);
-                        System.out.println("************");
+                        System.out.println("************   ************");
 
                         return;
                     }
