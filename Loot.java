@@ -18,11 +18,15 @@ public class Loot extends BaseEntity{
     }
 
     public void backMoney(Player player){
-        player.changeMoney(-this.money);
+        int t= this.money;
+        t= t*-1;
+        player.changeMoney(t);
         this.used = false;
     }
     public void backFood(Player player){
-        player.changeFood(-this.food);
+        int t= this.food;
+        t= t*-1;
+        player.changeFood(t);
         this.used = false;
     }
 
