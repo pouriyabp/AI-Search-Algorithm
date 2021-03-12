@@ -397,6 +397,9 @@ public class Node {
                         temp2.player.j ++;
                         ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
+                        Node temp3 = new Node(this.player,this.map,this,"left",this.depth-1);
+                        temp3.player.j++;
+                        result.add(temp3);
                     }
                 }
             }
@@ -465,6 +468,9 @@ public class Node {
                         temp2.player.j --;
                         ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
+                        Node temp3 = new Node(this.player,this.map,this,"left",this.depth-1);
+                        temp3.player.j--;
+                        result.add(temp3);
                     }
                 }
             }
@@ -533,6 +539,9 @@ public class Node {
                         temp2.player.i --;
                         ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
+                        Node temp3 = new Node(this.player,this.map,this,"left",this.depth-1);
+                        temp3.player.i++;
+                        result.add(temp3);
                     }
                 }
             }
@@ -601,6 +610,9 @@ public class Node {
                         temp2.player.i ++;
                         ((Loot)temp2.map.at(temp2.player.i,temp2.player.j)).backFood(temp2.player);
                         result.add(temp2);
+                        Node temp3 = new Node(this.player,this.map,this,"left",this.depth-1);
+                        temp3.player.i++;
+                        result.add(temp3);
                     }
                     
                 }
