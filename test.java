@@ -87,6 +87,10 @@ System.out.println("DFS Search!");
         Astar astar=new Astar();
         System.out.println(astar.hurestic(node));
         astar.search(node);
+        System.out.println("------------------------------------------------------");
+        System.out.println("IDA* Search!");
+        IDAstar idAstar=new IDAstar();
+        idAstar.search(node);
 
     }
 }
