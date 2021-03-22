@@ -81,7 +81,11 @@ System.out.println("DFS Search!");
         System.out.println("------------------------------------------------------");
         System.out.println("BDS Search2!");
         bds.search2(node,player);
-
+        // bds.search(node,player);
+        System.out.println("------------------------------------------------------");
+        System.out.println("A* Search!");
+        Astar astar=new Astar();
+        System.out.println(astar.hurestic(node));
 
     }
 }
