@@ -6,6 +6,7 @@ public class Node {
     public Node parentNode;
     public String priviousAction;
     public int depth;
+    public int f;
 
     public Node(Player player,Map map,Node parentNode,String priviousAction,int depth){
         this.map = map.copy();
