@@ -86,6 +86,7 @@ System.out.println("DFS Search!");
         System.out.println("A* Search!");
         Astar astar=new Astar();
         System.out.println(astar.hurestic(node));
+        astar.search(node);
 
     }
 }
